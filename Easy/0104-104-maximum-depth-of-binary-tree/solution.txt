@@ -1,0 +1,27 @@
+/* LeetCode Problem #104: 104. Maximum Depth of Binary Tree
+ * Difficulty: Easy
+ * Topics: Tree, Depth-First Search, Breadth-First Search, Binary Tree
+ * Language: Unknown
+ * Runtime: N/A | Memory: N/A
+ * Solved: 8/24/2026
+ */
+
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public int maxDepth(TreeNode root) {
+        if (root == null) return 0;
+    }
+ *     TreeNode() {}
+ *     TreeNode right;
+ *     TreeNode left;
+        int leftTree = maxDepth(root.left);
+        int rightTree = maxDepth(root.right);
+
+        return 1 + Math.max(leftTree, rightTree);
