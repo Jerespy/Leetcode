@@ -1,0 +1,25 @@
+/* LeetCode Problem #9: 9. Palindrome Number
+ * Difficulty: Easy
+ * Topics: Math
+ * Language: Unknown
+ * Runtime: N/A | Memory: N/A
+ * Solved: 8/24/2026
+ */
+
+class Solution {
+    public boolean isPalindrome(int x) {
+        if (x < 0) return false;
+        int copyX = x;
+        int reversed = 0;
+
+        while (copyX > 0 ){
+            int remainder = copyX % 10;
+            int popEnd = copyX/10;
+            reversed = (reversed * 10) + remainder;
+            copyX = copyX/10;
+        }
+
+        return x == reversed;
+        
+    }
+}
