@@ -6,24 +6,20 @@
  * Solved: 8/24/2026
  */
 
-        
-
-        while (! queue.isEmpty()) {
-            List<Integer> levelArray = new ArrayList<>();
             int currentItemInQueue = queue.size();
 
             while (currentItemInQueue > 0 ) {
                 TreeNode polledNode = queue.poll();
-                levelArray.add(polledNode.val);
-        queue.offer(root);
                 if (isRightDirection) {
+            LinkedList<Integer> levelArray = new LinkedList<>();
+                    // levelArray.add(polledNode.val);
+                    levelArray.addLast(polledNode.val); 
                 }
-                    if (polledNode.right != null) queue.offer(polledNode.right);
-                    if (polledNode.left != null) queue.offer(polledNode.left);
-                    isRightDirection = false;
                 else {
-                    if (polledNode.left != null) queue.offer(polledNode.left);
-                    isRightDirection = true;
+                    // levelArray.add(0, polledNode.val); 
+                    levelArray.addFirst(polledNode.val);
                 }
+                if (polledNode.left != null) queue.offer(polledNode.left);
+                if (polledNode.right != null) queue.offer(polledNode.right);
+                
                 currentItemInQueue--;
-                    if (polledNode.right != null) queue.offer(polledNode.right);
