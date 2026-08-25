@@ -12,7 +12,7 @@
 
 ## Solution
 ```txt
-import java.util.*
+
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -49,7 +49,7 @@ class Solution {
 
         if (root == null) return 0;
 
-        Queue<Integer> queue = new Linkedlist<>();
+        Queue<Integer> queue = new LinkedList<>();
         queue.offer(root);
         int miniDepth = 0;
 
