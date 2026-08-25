@@ -1,0 +1,65 @@
+/* LeetCode Problem #111: 111. Minimum Depth of Binary Tree
+ * Difficulty: Easy
+ * Topics: Tree, Depth-First Search, Breadth-First Search, Binary Tree
+ * Language: Unknown
+ * Runtime: N/A | Memory: N/A
+ * Solved: 8/26/2026
+ */
+
+import java.util.*;
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public int minDepth(TreeNode root) {
+
+        // is root==null return 0;
+        // Create a list that we can push and pop from both side e.g LinkedList or queue
+        // push root into list
+        // miniDepth = 0
+        // while list is not empty
+            // miniDepth++;
+            // listSize = count list size;
+            // while (listSize > 0)
+                //poppedNode = remove the top element from the list
+                // if (left && right children are null) return miniDepth
+                // if poppedNode has left child, push it into the list
+                // if poppedNode has right child, push it into the list
+                // listSize--;
+        
+        // return miniDepth
+
+        if (root == null) return 0;
+
+        Queue<Integer> queue = new Linkedlist<>();
+        queue.offer(root);
+        int miniDepth = 0;
+
+        while (!queue.isEmpty()) {
+            miniDepth++;
+            int queueSize = queue.size();
+
+            while (queueSize > 0) {
+                TreeNode node = queue.poll();
+                if (node.left == null && node.right == null) return miniDepth;
+                if (node.left != null) queue.offer(node.left);
+                if (node.right != null) queue.offer(node.right);
+                listSize--;
+            }
+        }
+        return miniDepth;
+        
+    }
+}
