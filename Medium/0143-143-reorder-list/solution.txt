@@ -1,0 +1,55 @@
+/* LeetCode Problem #143: 143. Reorder List
+ * Difficulty: Medium
+ * Topics: Linked List, Two Pointers, Stack, Recursion
+ * Language: Unknown
+ * Runtime: N/A | Memory: N/A
+ * Solved: 8/26/2026
+ */
+
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public void reorderList(ListNode head) {
+        // shouldTakeFromLeft=true;
+        // push nodes into a deque
+        // we reconstruct the list.
+        // list = shouldTakeFromLeft ? take left : take right
+        boolean shouldTakeFromLeft=true;
+        if (head == null) return ;
+        
+        Deque<ListNode> list = new LinkedList<>();
+        ListNode dummy = new ListNode();
+        dummy.next = head;
+        ListNode left = dummy;
+        ListNode right = dummy.next;
+        while (right != null) {
+            left = right;
+            right = right.next;
+            left.next = null;
+            list.add(left);
+            
+        }
+        // while (! list.isEmpty()) {
+        //     System.out.println(list.removeFirst().val);
+        // }
+        
+        ListNode current = dummy.next;
+
+        while (! list.isEmpty()) {
+            current.next = shouldTakeFromLeft ?
+                list.removeFirst()
+                : list.removeLast();
+            
+            current = current.next;
+            shouldTakeFromLeft = !shouldTakeFromLeft;
+        }
+    }
+}
