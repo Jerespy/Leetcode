@@ -1,0 +1,23 @@
+/* LeetCode Problem #0: 206. Reverse Linked List
+ * Difficulty: Easy
+ * Topics: Linked List, Recursion
+ * Language: Unknown
+ * Runtime: N/A | Memory: N/A
+ * Solved: 8/27/2026
+ */
+
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode reverseList(ListNode head) {
+        
+    }
+}
